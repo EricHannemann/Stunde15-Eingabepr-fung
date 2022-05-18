@@ -61,51 +61,58 @@ namespace Stunde15_Eingabeprüfung
                     Console.Write("Passwort eingeben: ");
                     passwort = Console.ReadLine();
 
-                    if (passwort.Length < 8)
-                    {
-                        zähler++;
-                        Console.WriteLine("zu wenig Zeichen.");
-                    }
-                    
-                    if (!EnthältZiffern(passwort))
-                    {
-                        zähler++;
-                        Console.WriteLine("keine Ziffern.");
-                    }
+                    //if (passwort.Length < 8)
+                    //{
+                    //    zähler++;
+                    //    Console.WriteLine("zu wenig Zeichen.");
+                    //}
 
-                    if (!EnthältGroßbuchstaben(passwort))
-                    {
-                        zähler++;
-                        Console.WriteLine("keine Großbuchstaben.");
-                    }
+                    //if (!EnthältZiffern(passwort))
+                    //{
+                    //    zähler++;
+                    //    Console.WriteLine("keine Ziffern.");
+                    //}
 
-                    if (!EnthältKleinbuchstaben(passwort))
-                    {
-                        zähler++;
-                        Console.WriteLine("keine Kleinbuchstaben.");
-                    }
+                    //if (!EnthältGroßbuchstaben(passwort))
+                    //{
+                    //    zähler++;
+                    //    Console.WriteLine("keine Großbuchstaben.");
+                    //}
 
-                    if (!EnthältSonderzeichen(passwort))
-                    {
-                        zähler++;
-                        Console.WriteLine("keine Sonderzeichen.");
-                    }
+                    //if (!EnthältKleinbuchstaben(passwort))
+                    //{
+                    //    zähler++;
+                    //    Console.WriteLine("keine Kleinbuchstaben.");
+                    //}
 
-                    if (zähler == 0)
-                    {
-                        inkorrekt = false;
-                        Console.WriteLine("Gültige Eingabe");
-                    }
+                    //if (!EnthältSonderzeichen(passwort))
+                    //{
+                    //    zähler++;
+                    //    Console.WriteLine("keine Sonderzeichen.");
+                    //}
 
-                    else
+                    //if (zähler == 0)
+                    //{
+                    //    inkorrekt = false;
+                    //    Console.WriteLine("Gültige Eingabe");
+                    //}
+
+                    //else
+                    //{
+                    //    inkorrekt = true;
+                    //    Console.WriteLine("Ungültige Eingabe");
+                    //}
+
+                    //Console.WriteLine(zähler + "zähler");
+
+                    inkorrekt = Regex.IsMatch(passwort, @"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{8,}$");
+
+                    if (inkorrekt = false)
                     {
-                        inkorrekt = true;
                         Console.WriteLine("Ungültige Eingabe");
                     }
 
-                    Console.WriteLine(zähler + "zähler");
-
-                } while (inkorrekt = true); // nicht korrekt = true  wenn  korrekt = false
+                } while (inkorrekt = false); // nicht korrekt = true  wenn  korrekt = false
 
             }
 
@@ -177,3 +184,7 @@ namespace Stunde15_Eingabeprüfung
         }
     }
 }
+
+
+// enumerables    +     List
+//
