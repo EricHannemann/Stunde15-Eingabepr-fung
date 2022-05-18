@@ -107,7 +107,7 @@ namespace Stunde15_Eingabeprüfung
 
                     inkorrekt = Regex.IsMatch(passwort, @"^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W).{8,}$");
 
-                    if (inkorrekt = false)
+                    if (inkorrekt == false)
                     {
                         Console.WriteLine("Ungültige Eingabe");
                     }
